@@ -1,4 +1,5 @@
-#  ys
+# ys
+**I created this while i learning C for a basic project with structs, pointers and type using**
 
 Simple fast, lightweight cordinate system visualizator with friendly API.
 | Cheetsheet for using| -- |
