@@ -53,5 +53,8 @@ int ys_MapSet(ys_Map *ys_map, int x, int y, int fillint) {
 /* Clearout the initalized systems
 */
 void ys_Close(ys_Map *ys_map) {
-    free(ys_map->layout);
+    if (ys_map != NULL) {
+        free(ys_map->layout);
+        ys_map->layout = NULL;
+    }
 }
