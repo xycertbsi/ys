@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include "ys.h"
 
-
 /* Createing a Map
 */
 ys_Map *ys_CreateMap(int height, int width) {
