@@ -23,6 +23,8 @@ int main() {
 	return  0;
 }
 ```
+This just now initalizes ys and after that its closes.
+
 To draw out your corruent Cordinate map you just:
 ```c
 #include "ys/ys.h"
@@ -36,6 +38,17 @@ int main() {
 	return  0;
 }
 ```
+your result be this:
+```bash
+$ gcc -Iys/ ys/ys.c main.c -o main.out && ./main.out
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+$ 
+```
+
 To get, and set a cordinate you just:
 ```c
 #include "ys/ys.h"
@@ -45,14 +58,33 @@ int main() {
 	ys_Map *ys = ys_CreateMap(5, 5);
 	ys_DrawMap(ys);
 	
-	ys_MapSet(ys, 2, 2, 1); // setting a cordinate
-	printf("%d", ys_MapGet(ys, 2, 2)); // this prints out the cordinate of 1; 1
-	
+	ys_MapSet(ys, 1, 1, 1); // setting a cordinate
+	printf("\n1:1: %d\n", ys_MapGet(ys, 1, 1)); // this prints out the cordinate of 1; 1
+
+    printf("\n");
 	ys_DrawMap(ys);
 	ys_Close(ys);
 	return 0;
 }
 ```
+
+your result be this:
+```bash
+$ gcc -Iys/ ys/ys.c main.c -o main.out && ./main.out
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 1:1: 1
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+ 0  0  1  0  0 
+ 0  0  0  0  0 
+ 0  0  0  0  0 
+$ 
+```
+
 
 How to compile your code:
 ```bash
